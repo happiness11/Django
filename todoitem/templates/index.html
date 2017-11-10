@@ -14,7 +14,7 @@
         {% for item in items %}
         <tr>
             {% if item.done %}
-            <td><strike>{{ item.name }}</strike></td>
+            <td><strike>{{ item.name }} ({{ item.priority }}) </strike></td>
             {% else %}
             <td>{{ item.name }}</td>
             {% endif %}
