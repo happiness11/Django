@@ -44,5 +44,5 @@ def toggle_item(request,id):
     #     item.done = True or
         
     item.done = not item.done
-    item.save
+    item.save()
     return redirect(get_index)
