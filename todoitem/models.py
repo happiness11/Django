@@ -7,4 +7,10 @@ class TodoItem(models.Model):
     priority = models.CharField(max_length=6, blank=False)
     
     def __str__(self):
-        return self.name
+        if self.done:
+            status = "D"
+        else:
+            status = "N"    
+        
+        # status = "D" if self.done else "N"
+        return "{0} ({1})".format(self.name, status)
