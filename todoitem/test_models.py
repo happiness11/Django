@@ -15,6 +15,10 @@ class TestItemModel(TestCase):
         self.assertEqual(item.name, "any name")
         self.assertTrue(item.done)
         
-    def test_item_as_string(self):
+    def test_not_item_as_string(self):
         item = TodoItem(name="An Item", done=False)
-        self.assertEqual("An Item", str(item))
+        self.assertEqual("An Item (N)", str(item))
+        
+    def test_item_as_string(self):
+        item = TodoItem(name="An Item", done=True)
+        self.assertEqual("An Item (D)", str(item))
